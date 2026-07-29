@@ -80,6 +80,7 @@ extra_css = []
 #
 # Read more: Zensical documentation for additional JavaScript.
 extra_javascript = [
+  "javascripts/password-gate.js",
   "javascripts/hide-footer.js",
   "javascripts/mathjax.js",
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
