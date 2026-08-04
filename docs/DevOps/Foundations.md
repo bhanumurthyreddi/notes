@@ -18,45 +18,32 @@ icon: lucide/cloud-cog
 
     Today is about understanding the purpose of DevOps and preparing your learning environment. Do not rush into Kubernetes, Terraform, or complex pipeline YAML yet.
 
-## What You Will Learn
-
-By the end of this lesson, you should be able to:
-
-- Explain what DevOps is and why it exists.
-- Describe the basic software delivery lifecycle.
-- Understand cloud computing at a beginner level.
-- Identify the main Azure DevOps services.
-- Understand where Azure DevOps fits in the Azure ecosystem.
-- Prepare your tools, accounts, and folder structure for future labs.
-
 ## Big Picture
 
-<div class="grid cards" markdown>
-
-- **DevOps**
-
-  ***
-
-  A culture and practice for delivering software faster, safer, and with better collaboration.
-
-- **Cloud**
-
-  ***
-
-  On-demand computing resources delivered through APIs, portals, and automation tools.
-
-- **Azure DevOps**
-
-  ***
-
-  Microsoft's platform for boards, Git repositories, CI/CD pipelines, testing, and artifacts.
-
-- **Azure**
-
-  ***
-
-  Microsoft's cloud platform for hosting applications, data, identity, security, and monitoring.
-
+<div
+  style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.5rem;"
+  markdown="1"
+>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Culture</p>
+    <h3 style="margin:0 0 .55rem;">DevOps</h3>
+    <p style="margin:0;">A culture and practice for delivering software faster, safer, and with better collaboration.</p>
+  </article>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Platform</p>
+    <h3 style="margin:0 0 .55rem;">Cloud</h3>
+    <p style="margin:0;">On-demand computing resources delivered through APIs, portals, and automation tools.</p>
+  </article>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Workflow</p>
+    <h3 style="margin:0 0 .55rem;">Azure DevOps</h3>
+    <p style="margin:0;">Microsoft's platform for boards, Git repositories, CI/CD pipelines, testing, and artifacts.</p>
+  </article>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Ecosystem</p>
+    <h3 style="margin:0 0 .55rem;">Azure</h3>
+    <p style="margin:0;">Microsoft's cloud platform for hosting applications, data, identity, security, and monitoring.</p>
+  </article>
 </div>
 
 ## Why DevOps Exists
