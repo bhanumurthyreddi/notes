@@ -58,9 +58,10 @@ nav = [
       { "Part 3 — Matrices" = "mathematics/part-3-matrices-data-transformations.md" }
     ]
   },
-  { "HTML" = "web/html.md" },
-  { "CSS" = "web/css.md" },
-  { "JavaScript" = "web/javascript.md" },
+  { "DevOps" = [
+      { "Foundations" = "DevOps/Foundations.md" }
+    ]
+  }
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize

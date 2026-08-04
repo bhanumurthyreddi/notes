@@ -1,0 +1,2134 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default template project.">
+      
+      
+        <meta name="author" content="<your name here>">
+      
+      
+      
+        <link rel="prev" href="../../mathematics/part-3-matrices-data-transformations/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.51">
+    
+    
+      
+        <title>Azure DevOps 365: Day 1 - All Tutorials</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.62c9b9cc.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-devops-365-day-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="All Tutorials" class="md-header__button md-logo" aria-label="All Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            All Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure DevOps 365: Day 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../python/getting-started/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mathematics/part-1-intuition/" class="md-tabs__link">
+          
+  
+  Mathematics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="././" class="md-tabs__link">
+          
+  
+  DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="All Tutorials" class="md-nav__button md-logo" aria-label="All Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    All Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Python
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/getting-started/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/variables/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-hash" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mathematics
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Mathematics
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/part-1-intuition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Part 1 — Intuition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/part-2-vector-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Part 2 — Vector Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/part-3-matrices-data-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Part 3 — Matrices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DevOps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  DevOps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-cloud-cog" viewBox="0 0 24 24"><path d="m10.852 19.772-.383.924M13.148 14.228l.383-.923M13.148 19.772a3 3 0 1 0-2.296-5.544l-.383-.923"/><path d="m13.53 20.696-.382-.924a3 3 0 1 1-2.296-5.544M14.772 15.852l.923-.383M14.772 18.148l.923.383"/><path d="M4.2 15.1a7 7 0 1 1 9.93-9.858A7 7 0 0 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2M9.228 15.852l-.923-.383M9.228 18.148l-.923.383"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Foundations
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-cloud-cog" viewBox="0 0 24 24"><path d="m10.852 19.772-.383.924M13.148 14.228l.383-.923M13.148 19.772a3 3 0 1 0-2.296-5.544l-.383-.923"/><path d="m13.53 20.696-.382-.924a3 3 0 1 1-2.296-5.544M14.772 15.852l.923-.383M14.772 18.148l.923.383"/><path d="M4.2 15.1a7 7 0 1 1 9.93-9.858A7 7 0 0 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2M9.228 15.852l-.923-.383M9.228 18.148l-.923.383"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Foundations
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Foundations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What You Will Learn
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Big Picture
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-devops-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Why DevOps Exists
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DevOps Lifecycle
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cloud Computing Basics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-devops-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure DevOps Services
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ecosystem-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure Ecosystem Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-devops-engineer-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure DevOps Engineer Role
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hands-On Lab
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hands-On Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 1: Install tools
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 2: Create accounts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-your-learning-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 3: Create your learning folder
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Checklist
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        First Examples
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-portal-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure Portal Walkthrough
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Safety Notes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Security
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cost
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Common mistakes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Troubleshooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mini Assignment
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quiz
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Expected Outcome
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Revision Notes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Week 1 Goal
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Foundations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What You Will Learn
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Big Picture
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-devops-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Why DevOps Exists
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DevOps Lifecycle
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cloud Computing Basics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-devops-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure DevOps Services
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ecosystem-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure Ecosystem Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-devops-engineer-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure DevOps Engineer Role
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hands-On Lab
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hands-On Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 1: Install tools
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 2: Create accounts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-your-learning-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Step 3: Create your learning folder
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Checklist
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        First Examples
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-portal-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Azure Portal Walkthrough
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Safety Notes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Security
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cost
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Common mistakes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Troubleshooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mini Assignment
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quiz
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Expected Outcome
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Revision Notes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Week 1 Goal
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="azure-devops-365-day-1">Azure DevOps 365: Day 1<a class="headerlink" href="#azure-devops-365-day-1" title="Permanent link">&para;</a></h1>
+<h2 id="foundations">Foundations<a class="headerlink" href="#foundations" title="Permanent link">&para;</a></h2>
+<p><strong>Topic:</strong> Introduction to DevOps, cloud computing, and the Azure ecosystem<br />
+<strong>Duration:</strong> 2-3 hours<br />
+<strong>Level:</strong> Beginner</p>
+<p><a class="md-button md-button--primary" href="#hands-on-lab">Start the lab</a>
+<a class="md-button" href="#command-checklist">Command checklist</a>
+<a class="md-button" href="#quiz">Quiz</a></p>
+<div class="admonition note">
+<p class="admonition-title">Day 1 focus</p>
+<p>Today is about understanding the purpose of DevOps and preparing your learning environment. Do not rush into Kubernetes, Terraform, or complex pipeline YAML yet.</p>
+</div>
+<h2 id="what-you-will-learn">What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Permanent link">&para;</a></h2>
+<p>By the end of this lesson, you should be able to:</p>
+<ul>
+<li>Explain what DevOps is and why it exists.</li>
+<li>Describe the basic software delivery lifecycle.</li>
+<li>Understand cloud computing at a beginner level.</li>
+<li>Identify the main Azure DevOps services.</li>
+<li>Understand where Azure DevOps fits in the Azure ecosystem.</li>
+<li>Prepare your tools, accounts, and folder structure for future labs.</li>
+</ul>
+<h2 id="big-picture">Big Picture<a class="headerlink" href="#big-picture" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li><strong>DevOps</strong></li>
+</ul>
+<hr />
+<p>A culture and practice for delivering software faster, safer, and with better collaboration.</p>
+<ul>
+<li><strong>Cloud</strong></li>
+</ul>
+<hr />
+<p>On-demand computing resources delivered through APIs, portals, and automation tools.</p>
+<ul>
+<li><strong>Azure DevOps</strong></li>
+</ul>
+<hr />
+<p>Microsoft's platform for boards, Git repositories, CI/CD pipelines, testing, and artifacts.</p>
+<ul>
+<li><strong>Azure</strong></li>
+</ul>
+<hr />
+<p>Microsoft's cloud platform for hosting applications, data, identity, security, and monitoring.</p>
+</div>
+<h2 id="why-devops-exists">Why DevOps Exists<a class="headerlink" href="#why-devops-exists" title="Permanent link">&para;</a></h2>
+<p>Traditional software delivery often had separate teams and slow handoffs:</p>
+<pre class="mermaid"><code>graph TD
+  A[Requirements] --&gt; B[Development]
+  B --&gt; C[Testing]
+  C --&gt; D[Manual Deployment]
+  D --&gt; E[Production Support]</code></pre>
+<p>Common problems:</p>
+<ul>
+<li>Releases were slow and risky.</li>
+<li>Deployments depended on manual steps.</li>
+<li>Testing and security happened late.</li>
+<li>Developers and operations teams worked in silos.</li>
+<li>Rollbacks were difficult.</li>
+<li>Production issues were discovered too late.</li>
+</ul>
+<p>DevOps improves this by using collaboration, automation, continuous testing, and monitoring.</p>
+<table>
+<thead>
+<tr>
+<th>Traditional delivery</th>
+<th>DevOps delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large releases</td>
+<td>Small frequent releases</td>
+</tr>
+<tr>
+<td>Manual deployments</td>
+<td>Automated deployments</td>
+</tr>
+<tr>
+<td>Late testing</td>
+<td>Testing on every change</td>
+</tr>
+<tr>
+<td>Team silos</td>
+<td>Shared ownership</td>
+</tr>
+<tr>
+<td>Reactive support</td>
+<td>Monitoring and alerts</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Beginner mistake</p>
+<p>DevOps is not just writing pipeline YAML. Pipelines are only one part of a larger delivery system.</p>
+</div>
+<h2 id="devops-lifecycle">DevOps Lifecycle<a class="headerlink" href="#devops-lifecycle" title="Permanent link">&para;</a></h2>
+<p>The DevOps lifecycle is continuous:</p>
+<pre class="mermaid"><code>graph LR
+  A[Plan] --&gt; B[Code]
+  B --&gt; C[Build]
+  C --&gt; D[Test]
+  D --&gt; E[Release]
+  E --&gt; F[Deploy]
+  F --&gt; G[Operate]
+  G --&gt; H[Monitor]
+  H --&gt; A</code></pre>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plan</td>
+<td>Decide what to build and track work.</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>Write application, test, script, and infrastructure code.</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>Compile, package, and validate the application.</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>Run automated quality, security, and integration checks.</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>Prepare an approved version for deployment.</td>
+</tr>
+<tr>
+<td>Deploy</td>
+<td>Move the change into an environment.</td>
+</tr>
+<tr>
+<td>Operate</td>
+<td>Keep the system healthy and available.</td>
+</tr>
+<tr>
+<td>Monitor</td>
+<td>Collect metrics, logs, traces, and alerts.</td>
+</tr>
+</tbody>
+</table>
+<details class="info" open="open">
+<summary>CI, CD, and DevSecOps</summary>
+<p><strong>Continuous Integration (CI)</strong> means code changes are merged often and automatically built and tested.</p>
+<p><strong>Continuous Delivery (CD)</strong> means the application is always kept ready for release.</p>
+<p><strong>Continuous Deployment</strong> means approved changes can be deployed automatically.</p>
+<p><strong>DevSecOps</strong> means security checks are included throughout the lifecycle.</p>
+</details>
+<h2 id="cloud-computing-basics">Cloud Computing Basics<a class="headerlink" href="#cloud-computing-basics" title="Permanent link">&para;</a></h2>
+<p>Cloud computing means using computing resources over the internet instead of buying and managing all hardware yourself.</p>
+<p>Core benefits:</p>
+<ul>
+<li><strong>Elasticity:</strong> scale resources up or down.</li>
+<li><strong>Pay-as-you-go:</strong> pay for actual usage.</li>
+<li><strong>Managed services:</strong> use databases, identity, monitoring, and compute without managing every server detail.</li>
+<li><strong>Global reach:</strong> host workloads near users.</li>
+<li><strong>Automation:</strong> create and manage resources through APIs and tools.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>What you manage</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IaaS</td>
+<td>Virtual machines, OS, runtime, app</td>
+<td>Azure Virtual Machines</td>
+</tr>
+<tr>
+<td>PaaS</td>
+<td>Application and configuration</td>
+<td>Azure App Service, Azure SQL</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>Almost only usage and access</td>
+<td>Microsoft 365, Azure DevOps</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">DevOps view of cloud</p>
+<p>Cloud resources can be created from scripts, CLI commands, Terraform, Bicep, SDKs, and pipelines. That is why cloud and DevOps are closely connected.</p>
+</div>
+<h2 id="azure-devops-services">Azure DevOps Services<a class="headerlink" href="#azure-devops-services" title="Permanent link">&para;</a></h2>
+<p>Azure DevOps helps teams manage the full software delivery process.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure Boards</td>
+<td>Track epics, features, user stories, bugs, and tasks.</td>
+</tr>
+<tr>
+<td>Azure Repos</td>
+<td>Store source code in Git repositories.</td>
+</tr>
+<tr>
+<td>Azure Pipelines</td>
+<td>Build, test, package, and deploy applications.</td>
+</tr>
+<tr>
+<td>Azure Test Plans</td>
+<td>Manage manual and exploratory testing.</td>
+</tr>
+<tr>
+<td>Azure Artifacts</td>
+<td>Store and share packages and build outputs.</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>graph TD
+  A[Developer] --&gt; B[Azure Repos]
+  B --&gt; C[Azure Pipelines]
+  C --&gt; D[Build]
+  D --&gt; E[Test]
+  E --&gt; F[Artifact]
+  F --&gt; G[Azure Deployment]
+  G --&gt; H[Monitor]</code></pre>
+<h2 id="azure-ecosystem-overview">Azure Ecosystem Overview<a class="headerlink" href="#azure-ecosystem-overview" title="Permanent link">&para;</a></h2>
+<p>A simple enterprise Azure application may use:</p>
+<pre class="mermaid"><code>graph TD
+  A[Internet] --&gt; B[Azure Front Door]
+  B --&gt; C[Application Gateway]
+  C --&gt; D[App Service / AKS / Virtual Machines]
+  D --&gt; E[Azure SQL / Storage]
+  D --&gt; F[Azure Monitor]
+  G[Microsoft Entra ID] --&gt; D
+  H[Azure Key Vault] --&gt; D</code></pre>
+<p>Important services to recognize on Day 1:</p>
+<ul>
+<li><strong>Microsoft Entra ID:</strong> identity and access management.</li>
+<li><strong>Resource Groups:</strong> containers for related Azure resources.</li>
+<li><strong>App Service:</strong> managed hosting for web apps and APIs.</li>
+<li><strong>AKS:</strong> managed Kubernetes for containers.</li>
+<li><strong>Virtual Machines:</strong> cloud servers.</li>
+<li><strong>Storage:</strong> object, file, queue, and table storage.</li>
+<li><strong>Azure SQL:</strong> managed relational database.</li>
+<li><strong>Azure Monitor:</strong> metrics, logs, alerts, and observability.</li>
+<li><strong>Key Vault:</strong> secure storage for secrets, keys, and certificates.</li>
+<li><strong>Cost Management:</strong> spending visibility, budgets, and alerts.</li>
+</ul>
+<h2 id="azure-devops-engineer-role">Azure DevOps Engineer Role<a class="headerlink" href="#azure-devops-engineer-role" title="Permanent link">&para;</a></h2>
+<p>An Azure DevOps Engineer helps teams deliver software reliably.</p>
+<p>Typical responsibilities:</p>
+<ul>
+<li>Manage repositories and branching strategies.</li>
+<li>Build CI/CD pipelines.</li>
+<li>Automate infrastructure with Terraform or Bicep.</li>
+<li>Configure dev, test, staging, and production environments.</li>
+<li>Add testing, security scanning, and approval gates.</li>
+<li>Store secrets safely with Azure Key Vault.</li>
+<li>Configure monitoring, alerts, and dashboards.</li>
+<li>Improve release reliability and rollback plans.</li>
+</ul>
+<h2 id="hands-on-lab">Hands-On Lab<a class="headerlink" href="#hands-on-lab" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
+<p>Prepare your Azure DevOps learning environment.</p>
+<div class="admonition success">
+<p class="admonition-title">Done when</p>
+<p>You can open VS Code, run Git commands, check Azure CLI, verify Docker, and save your notes in a local folder.</p>
+</div>
+<h3 id="step-1-install-tools">Step 1: Install tools<a class="headerlink" href="#step-1-install-tools" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Why you need it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Git</td>
+<td>Version control and GitHub practice.</td>
+</tr>
+<tr>
+<td>Visual Studio Code</td>
+<td>Editor and integrated terminal.</td>
+</tr>
+<tr>
+<td>Azure CLI</td>
+<td>Azure command-line management.</td>
+</tr>
+<tr>
+<td>PowerShell 7+</td>
+<td>Cross-platform automation.</td>
+</tr>
+<tr>
+<td>Docker Desktop</td>
+<td>Container practice.</td>
+</tr>
+<tr>
+<td>Terraform</td>
+<td>Infrastructure as Code practice.</td>
+</tr>
+<tr>
+<td>kubectl</td>
+<td>Kubernetes command-line practice.</td>
+</tr>
+</tbody>
+</table>
+<p>Useful VS Code extensions:</p>
+<ul>
+<li>Azure Account</li>
+<li>Azure Resources</li>
+<li>Azure CLI Tools</li>
+<li>Docker</li>
+<li>Kubernetes</li>
+<li>Terraform</li>
+<li>YAML</li>
+<li>GitHub Pull Requests</li>
+</ul>
+<h3 id="step-2-create-accounts">Step 2: Create accounts<a class="headerlink" href="#step-2-create-accounts" title="Permanent link">&para;</a></h3>
+<p>Create or verify access to:</p>
+<ul>
+<li>Microsoft Azure</li>
+<li>Azure DevOps</li>
+<li>GitHub</li>
+</ul>
+<p>Enable MFA on Microsoft and GitHub accounts.</p>
+<h3 id="step-3-create-your-learning-folder">Step 3: Create your learning folder<a class="headerlink" href="#step-3-create-your-learning-folder" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AzureDevOps365/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Labs/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Projects/
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Notes/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    Scripts/
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PowerShell</label><label for="__tabbed_1_2">Bash</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-powershell highlight"><span class="filename">Create folders</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">AzureDevOps365</span><span class="p">,</span> <span class="n">AzureDevOps365</span><span class="p">\</span><span class="n">Labs</span><span class="p">,</span> <span class="n">AzureDevOps365</span><span class="p">\</span><span class="n">Projects</span><span class="p">,</span> <span class="n">AzureDevOps365</span><span class="p">\</span><span class="n">Notes</span><span class="p">,</span> <span class="n">AzureDevOps365</span><span class="p">\</span><span class="n">Scripts</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">Create folders</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>AzureDevOps365/<span class="o">{</span>Labs,Projects,Notes,Scripts<span class="o">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="command-checklist">Command Checklist<a class="headerlink" href="#command-checklist" title="Permanent link">&para;</a></h2>
+<p>Run these commands to verify your setup.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Azure CLI</label><label for="__tabbed_2_2">PowerShell</label><label for="__tabbed_2_3">Git</label><label for="__tabbed_2_4">Docker</label><label for="__tabbed_2_5">Terraform</label><label for="__tabbed_2_6">Kubernetes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">Azure CLI</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>az<span class="w"> </span>version
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>az<span class="w"> </span>login
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>az<span class="w"> </span>account<span class="w"> </span>list<span class="w"> </span>--output<span class="w"> </span>table
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>az<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>--output<span class="w"> </span>table
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$PSVersionTable</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Install-Module</span> <span class="n">Az</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">Connect-AzAccount</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">Get-AzSubscription</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">Git</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>--version
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>git<span class="w"> </span>config<span class="w"> </span>--list
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">Docker</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>--version
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>images
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>docker<span class="w"> </span>ps
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">Terraform</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>terraform<span class="w"> </span>version
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">kubectl</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl<span class="w"> </span>version<span class="w"> </span>--client
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="first-examples">First Examples<a class="headerlink" href="#first-examples" title="Permanent link">&para;</a></h2>
+<p>You do not need to execute these today. Just recognize the syntax.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Azure Pipeline</label><label for="__tabbed_3_2">Terraform</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-yaml highlight"><span class="filename">azure-pipelines.yml</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">pool</span><span class="p">:</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">vmImage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Hello Azure DevOps&quot;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-hcl highlight"><span class="filename">main.tf</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="na">required_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;= 1.0&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="azure-portal-walkthrough">Azure Portal Walkthrough<a class="headerlink" href="#azure-portal-walkthrough" title="Permanent link">&para;</a></h2>
+<p>Open the Azure portal and explore:</p>
+<ol>
+<li>Azure Home</li>
+<li>Resource Groups</li>
+<li>Virtual Machines</li>
+<li>Storage Accounts</li>
+<li>Azure Monitor</li>
+<li>Microsoft Entra ID</li>
+<li>Cost Management</li>
+</ol>
+<p>Do not create paid resources yet. Today is only for navigation and familiarity.</p>
+<h2 id="safety-notes">Safety Notes<a class="headerlink" href="#safety-notes" title="Permanent link">&para;</a></h2>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enable MFA.</li>
+<li>Never commit passwords, tokens, or connection strings.</li>
+<li>Use Azure Key Vault for real secrets.</li>
+<li>Use least privilege access.</li>
+<li>Keep tools updated.</li>
+</ul>
+<h3 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use Azure Free Tier where possible.</li>
+<li>Set budgets and spending alerts before creating resources.</li>
+<li>Delete lab resources when finished.</li>
+<li>Stop or deallocate virtual machines when idle.</li>
+<li>Use one resource group per lab for easy cleanup.</li>
+</ul>
+<h3 id="common-mistakes">Common mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Jumping into Kubernetes before understanding containers and networking.</li>
+<li>Memorizing commands without understanding them.</li>
+<li>Skipping Git basics.</li>
+<li>Not writing notes.</li>
+<li>Leaving cloud resources running.</li>
+<li>Using admin accounts for daily practice.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>Problem:</strong> <code>az login</code> fails.</p>
+<p>Possible causes:</p>
+<ul>
+<li>Azure CLI is not installed correctly.</li>
+<li>Browser login cannot complete.</li>
+<li>Network, firewall, or proxy restrictions block authentication.</li>
+<li>The wrong account, tenant, or subscription is active.</li>
+<li>Azure CLI is outdated.</li>
+</ul>
+<p>Try this flow:</p>
+<div class="language-bash highlight"><span class="filename">Azure CLI login checks</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>az<span class="w"> </span>version
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>az<span class="w"> </span>login<span class="w"> </span>--use-device-code
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>az<span class="w"> </span>account<span class="w"> </span>list<span class="w"> </span>--output<span class="w"> </span>table
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>az<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>--output<span class="w"> </span>table
+</span></code></pre></div>
+<p>If the wrong subscription is active:</p>
+<div class="language-bash highlight"><span class="filename">Set subscription</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>az<span class="w"> </span>account<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--subscription<span class="w"> </span><span class="s2">&quot;&lt;subscription-name-or-id&gt;&quot;</span>
+</span></code></pre></div>
+<h2 id="mini-assignment">Mini Assignment<a class="headerlink" href="#mini-assignment" title="Permanent link">&para;</a></h2>
+<p>Complete these tasks:</p>
+<ol>
+<li>Install Git, VS Code, Azure CLI, PowerShell 7+, Docker, Terraform, and kubectl.</li>
+<li>Sign in to Azure.</li>
+<li>Create the <code>AzureDevOps365</code> folder structure.</li>
+<li>Configure Git with your name and email.</li>
+<li>Create <code>Notes/day-01-foundations.md</code>.</li>
+<li>In your note, explain DevOps in your own words.</li>
+<li>Capture the output of the setup commands from the command checklist.</li>
+</ol>
+<h2 id="quiz">Quiz<a class="headerlink" href="#quiz" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What problem does DevOps solve?</li>
+<li>What are the stages of the DevOps lifecycle?</li>
+<li>What is Continuous Integration?</li>
+<li>What is Continuous Delivery?</li>
+<li>What is Azure DevOps?</li>
+<li>What does Azure CLI do?</li>
+<li>Why is Git important in DevOps?</li>
+<li>What is Infrastructure as Code?</li>
+<li>Why should secrets never be stored in source code?</li>
+<li>What is Azure Monitor used for?</li>
+</ol>
+<details class="success">
+<summary>Answer guide</summary>
+<ol>
+<li>DevOps reduces slow handoffs, manual work, risky releases, and poor feedback.</li>
+<li>Plan, Code, Build, Test, Release, Deploy, Operate, Monitor.</li>
+<li>CI automatically builds and tests code when changes are integrated.</li>
+<li>Continuous Delivery keeps software ready to release after checks pass.</li>
+<li>Azure DevOps is Microsoft's platform for planning, repos, pipelines, tests, and artifacts.</li>
+<li>Azure CLI manages Azure resources from a terminal or automation script.</li>
+<li>Git provides history, collaboration, branching, review, and rollback.</li>
+<li>Infrastructure as Code stores infrastructure definitions in version-controlled files.</li>
+<li>Secrets in source code can leak credentials and compromise systems.</li>
+<li>Azure Monitor collects metrics, logs, alerts, and operational signals.</li>
+</ol>
+</details>
+<h2 id="expected-outcome">Expected Outcome<a class="headerlink" href="#expected-outcome" title="Permanent link">&para;</a></h2>
+<p>After Day 1, you should be able to:</p>
+<ul>
+<li>Explain DevOps at a beginner level.</li>
+<li>Describe the software delivery lifecycle.</li>
+<li>Identify Azure DevOps services.</li>
+<li>Understand basic Azure cloud services.</li>
+<li>Verify your local tools.</li>
+<li>Start keeping organized notes for future labs.</li>
+</ul>
+<h2 id="revision-notes">Revision Notes<a class="headerlink" href="#revision-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DevOps is culture plus automation.</li>
+<li>Azure DevOps supports planning, source control, CI/CD, testing, and packages.</li>
+<li>Cloud platforms are API-driven and automation-friendly.</li>
+<li>Security and cost awareness start on Day 1.</li>
+<li>Learn the why before the how.</li>
+</ul>
+<h2 id="week-1-goal">Week 1 Goal<a class="headerlink" href="#week-1-goal" title="Permanent link">&para;</a></h2>
+<p>Build a strong foundation in DevOps, cloud computing, Git, operating systems, networking basics, and tool setup. This foundation supports upcoming lessons on Azure, CI/CD, Docker, Kubernetes, Infrastructure as Code, monitoring, and secure delivery.</p>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../mathematics/part-3-matrices-data-transformations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part 3 — Matrices">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Part 3 — Matrices
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The 
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7f30b55.min.js"></script>
+      
+        <script src="../../javascripts/password-gate.js"></script>
+      
+        <script src="../../javascripts/hide-footer.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/mermaid-fallback.js"></script>
+      
+    
+  </body>
+</html>

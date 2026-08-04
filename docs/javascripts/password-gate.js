@@ -1,5 +1,5 @@
 (function () {
-  const PASSWORD = "tutorials2026";
+  const PASSWORD = "Bhanu102924";
   const AUTH_KEY = "all-tutorials-authenticated";
   const OVERLAY_ID = "password-gate";
   const LOGOUT_ID = "password-gate-logout";
