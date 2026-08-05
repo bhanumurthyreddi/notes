@@ -52,6 +52,10 @@ nav = [
       { "Variables" = "python/variables.md" }
     ]
   },
+  { "English" = [
+      { "Foundations" = "English/the-26-letters.md" }
+    ]
+  },
   { "Mathematics" = [
       { "Part 1 — Intuition" = "mathematics/part-1-intuition.md" },
       { "Part 2 — Vector Operations" = "mathematics/part-2-vector-operations.md" },
@@ -59,7 +63,8 @@ nav = [
     ]
   },
   { "DevOps" = [
-      { "Foundations" = "DevOps/Foundations.md" }
+      { "Foundations" = "DevOps/Foundations.md" },
+      { "Computer Networking" = "DevOps/Computer-Networking-Fundamentals-for-DevOps-Engineers.md" }
     ]
   }
 ]

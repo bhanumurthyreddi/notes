@@ -4,252 +4,214 @@ icon: lucide/cloud-cog
 
 # Azure DevOps 365: Day 1
 
-## Foundations
+## What is DevOps?
 
-**Topic:** Introduction to DevOps, cloud computing, and the Azure ecosystem  
-**Duration:** 2-3 hours  
-**Level:** Beginner
+DevOps combines:
 
-[Start the lab](#hands-on-lab){ .md-button .md-button--primary }
-[Command checklist](#command-checklist){ .md-button }
-[Quiz](#quiz){ .md-button }
+```text
+Development + Operations
+```
 
-!!! note "Day 1 focus"
+Its goal is to:
 
-    Today is about understanding the purpose of DevOps and preparing your learning environment. Do not rush into Kubernetes, Terraform, or complex pipeline YAML yet.
-
-## Big Picture
+- Deliver software faster
+- Improve quality
+- Reduce failures
+- Automate repetitive tasks
+- Increase collaboration
 
 <div
-  style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.5rem;"
+  style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.2rem 0 1.5rem;"
   markdown="1"
 >
-  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
-    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Culture</p>
-    <h3 style="margin:0 0 .55rem;">DevOps</h3>
-    <p style="margin:0;">A culture and practice for delivering software faster, safer, and with better collaboration.</p>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;padding:1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 22px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .4rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">People</p>
+    <h3 style="margin:0 0 .45rem;">Work Together</h3>
+    <p style="margin:0;">Developers, testers, and operations teams share the same goal.</p>
   </article>
-  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
-    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Platform</p>
-    <h3 style="margin:0 0 .55rem;">Cloud</h3>
-    <p style="margin:0;">On-demand computing resources delivered through APIs, portals, and automation tools.</p>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;padding:1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 22px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .4rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Process</p>
+    <h3 style="margin:0 0 .45rem;">Automate Work</h3>
+    <p style="margin:0;">Builds, tests, and deployments run with fewer manual steps.</p>
   </article>
-  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
-    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Workflow</p>
-    <h3 style="margin:0 0 .55rem;">Azure DevOps</h3>
-    <p style="margin:0;">Microsoft's platform for boards, Git repositories, CI/CD pipelines, testing, and artifacts.</p>
-  </article>
-  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 24px rgba(0,0,0,.05);">
-    <p style="margin:0 0 .45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Ecosystem</p>
-    <h3 style="margin:0 0 .55rem;">Azure</h3>
-    <p style="margin:0;">Microsoft's cloud platform for hosting applications, data, identity, security, and monitoring.</p>
+  <article style="border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;padding:1rem;background:linear-gradient(135deg,var(--md-default-bg-color),var(--md-code-bg-color));box-shadow:0 8px 22px rgba(0,0,0,.05);">
+    <p style="margin:0 0 .4rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--md-primary-fg-color);">Result</p>
+    <h3 style="margin:0 0 .45rem;">Release Safely</h3>
+    <p style="margin:0;">Small changes reach users faster and are easier to fix.</p>
   </article>
 </div>
 
-## Why DevOps Exists
+[Start the lab](#hands-on-lab){ .md-button .md-button--primary }
+[Check commands](#command-checklist){ .md-button }
 
-Traditional software delivery often had separate teams and slow handoffs:
+!!! note "Day 1 focus"
 
-```mermaid
-graph TD
-  A[Requirements] --> B[Development]
-  B --> C[Testing]
-  C --> D[Manual Deployment]
-  D --> E[Production Support]
+    Learn the basic idea first. Tools like Kubernetes, Terraform, and pipeline YAML come later.
+
+## Traditional Software Development
+
+Before DevOps, many teams worked step by step like this:
+
+```text
+Requirements
+  ↓
+Development
+  ↓
+Testing
+  ↓
+Deployment
+  ↓
+Maintenance
 ```
 
-Common problems:
+Problems:
 
-- Releases were slow and risky.
-- Deployments depended on manual steps.
-- Testing and security happened late.
-- Developers and operations teams worked in silos.
-- Rollbacks were difficult.
-- Production issues were discovered too late.
+- Slow releases
+- Manual deployments
+- High failure rates
+- Lack of automation
+- Team silos
 
-DevOps improves this by using collaboration, automation, continuous testing, and monitoring.
+## Why DevOps Matters
 
-| Traditional delivery | DevOps delivery         |
-| -------------------- | ----------------------- |
-| Large releases       | Small frequent releases |
-| Manual deployments   | Automated deployments   |
-| Late testing         | Testing on every change |
-| Team silos           | Shared ownership        |
-| Reactive support     | Monitoring and alerts   |
+Without DevOps, software teams often wait on each other. A change may move slowly from idea, to code, to test, to deployment.
 
-!!! warning "Beginner mistake"
+```mermaid
+graph LR
+  A[Idea] --> B[Code]
+  B --> C[Test]
+  C --> D[Deploy]
+  D --> E[Users]
+```
 
-    DevOps is not just writing pipeline YAML. Pipelines are only one part of a larger delivery system.
+DevOps makes this flow smoother by using teamwork, automation, testing, and monitoring.
+
+| Old way         | DevOps way             |
+| --------------- | ---------------------- |
+| Big releases    | Small releases         |
+| Manual steps    | Automated steps        |
+| Testing late    | Testing often          |
+| Teams separated | Teams working together |
 
 ## DevOps Lifecycle
 
-The DevOps lifecycle is continuous:
+Think of DevOps as a loop. Teams plan, build, check, release, and learn from real usage.
 
 ```mermaid
 graph LR
   A[Plan] --> B[Code]
   B --> C[Build]
   C --> D[Test]
-  D --> E[Release]
-  E --> F[Deploy]
-  F --> G[Operate]
-  G --> H[Monitor]
-  H --> A
+  D --> E[Deploy]
+  E --> F[Monitor]
+  F --> A
 ```
 
-| Stage   | Meaning                                                   |
-| ------- | --------------------------------------------------------- |
-| Plan    | Decide what to build and track work.                      |
-| Code    | Write application, test, script, and infrastructure code. |
-| Build   | Compile, package, and validate the application.           |
-| Test    | Run automated quality, security, and integration checks.  |
-| Release | Prepare an approved version for deployment.               |
-| Deploy  | Move the change into an environment.                      |
-| Operate | Keep the system healthy and available.                    |
-| Monitor | Collect metrics, logs, traces, and alerts.                |
+| Stage   | Simple meaning                  |
+| ------- | ------------------------------- |
+| Plan    | Decide what to make.            |
+| Code    | Write the change.               |
+| Build   | Prepare the app to run.         |
+| Test    | Check if it works.              |
+| Deploy  | Put it where users can use it.  |
+| Monitor | Watch for problems and improve. |
 
-???+ info "CI, CD, and DevSecOps"
+???+ info "Simple words"
 
-    **Continuous Integration (CI)** means code changes are merged often and automatically built and tested.
+    **CI** means code is checked often.
 
-    **Continuous Delivery (CD)** means the application is always kept ready for release.
+    **CD** means the app is kept ready to release.
 
-    **Continuous Deployment** means approved changes can be deployed automatically.
+    **Automation** means the computer does repeatable work for you.
 
-    **DevSecOps** means security checks are included throughout the lifecycle.
+## Cloud Basics
 
-## Cloud Computing Basics
+Cloud means using computers, storage, databases, and tools through the internet.
 
-Cloud computing means using computing resources over the internet instead of buying and managing all hardware yourself.
+You do not need to buy servers for every practice project. You can create cloud resources when needed and remove them when finished.
 
-Core benefits:
+| Term | Simple meaning                                             |
+| ---- | ---------------------------------------------------------- |
+| IaaS | You manage a cloud server.                                 |
+| PaaS | You deploy an app, and Azure manages much of the platform. |
+| SaaS | You use ready-made software in a browser.                  |
 
-- **Elasticity:** scale resources up or down.
-- **Pay-as-you-go:** pay for actual usage.
-- **Managed services:** use databases, identity, monitoring, and compute without managing every server detail.
-- **Global reach:** host workloads near users.
-- **Automation:** create and manage resources through APIs and tools.
+!!! tip "Why cloud helps DevOps"
 
-| Model | What you manage                    | Example                      |
-| ----- | ---------------------------------- | ---------------------------- |
-| IaaS  | Virtual machines, OS, runtime, app | Azure Virtual Machines       |
-| PaaS  | Application and configuration      | Azure App Service, Azure SQL |
-| SaaS  | Almost only usage and access       | Microsoft 365, Azure DevOps  |
-
-!!! tip "DevOps view of cloud"
-
-    Cloud resources can be created from scripts, CLI commands, Terraform, Bicep, SDKs, and pipelines. That is why cloud and DevOps are closely connected.
+    Cloud resources can be created with commands, scripts, and pipelines. This makes practice and automation easier.
 
 ## Azure DevOps Services
 
-Azure DevOps helps teams manage the full software delivery process.
+Azure DevOps is a Microsoft platform for managing software work from idea to release.
 
-| Service          | Purpose                                               |
-| ---------------- | ----------------------------------------------------- |
-| Azure Boards     | Track epics, features, user stories, bugs, and tasks. |
-| Azure Repos      | Store source code in Git repositories.                |
-| Azure Pipelines  | Build, test, package, and deploy applications.        |
-| Azure Test Plans | Manage manual and exploratory testing.                |
-| Azure Artifacts  | Store and share packages and build outputs.           |
-
-```mermaid
-graph TD
-  A[Developer] --> B[Azure Repos]
-  B --> C[Azure Pipelines]
-  C --> D[Build]
-  D --> E[Test]
-  E --> F[Artifact]
-  F --> G[Azure Deployment]
-  G --> H[Monitor]
-```
+| Service    | What it does                       |
+| ---------- | ---------------------------------- |
+| Boards     | Tracks work items.                 |
+| Repos      | Stores code.                       |
+| Pipelines  | Builds, tests, and deploys code.   |
+| Test Plans | Helps with testing.                |
+| Artifacts  | Stores packages and build outputs. |
 
 ## Azure Ecosystem Overview
 
-A simple enterprise Azure application may use:
+Azure is Microsoft's cloud platform. On Day 1, only recognize these names.
 
-```mermaid
-graph TD
-  A[Internet] --> B[Azure Front Door]
-  B --> C[Application Gateway]
-  C --> D[App Service / AKS / Virtual Machines]
-  D --> E[Azure SQL / Storage]
-  D --> F[Azure Monitor]
-  G[Microsoft Entra ID] --> D
-  H[Azure Key Vault] --> D
-```
-
-Important services to recognize on Day 1:
-
-- **Microsoft Entra ID:** identity and access management.
-- **Resource Groups:** containers for related Azure resources.
-- **App Service:** managed hosting for web apps and APIs.
-- **AKS:** managed Kubernetes for containers.
-- **Virtual Machines:** cloud servers.
-- **Storage:** object, file, queue, and table storage.
-- **Azure SQL:** managed relational database.
-- **Azure Monitor:** metrics, logs, alerts, and observability.
-- **Key Vault:** secure storage for secrets, keys, and certificates.
-- **Cost Management:** spending visibility, budgets, and alerts.
-
-## Azure DevOps Engineer Role
-
-An Azure DevOps Engineer helps teams deliver software reliably.
-
-Typical responsibilities:
-
-- Manage repositories and branching strategies.
-- Build CI/CD pipelines.
-- Automate infrastructure with Terraform or Bicep.
-- Configure dev, test, staging, and production environments.
-- Add testing, security scanning, and approval gates.
-- Store secrets safely with Azure Key Vault.
-- Configure monitoring, alerts, and dashboards.
-- Improve release reliability and rollback plans.
+<div
+  style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem;margin:1rem 0;"
+  markdown="1"
+>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>App Service</strong><br>
+    Hosts web apps and APIs.
+  </article>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>Storage</strong><br>
+    Saves files and data.
+  </article>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>Azure SQL</strong><br>
+    Stores relational data.
+  </article>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>Azure Monitor</strong><br>
+    Watches apps and alerts you.
+  </article>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>Key Vault</strong><br>
+    Protects secrets.
+  </article>
+  <article style="border-left:4px solid var(--md-primary-fg-color);padding:.75rem .9rem;background:var(--md-code-bg-color);border-radius:8px;">
+    <strong>Entra ID</strong><br>
+    Manages identity and sign-in.
+  </article>
+</div>
 
 ## Hands-On Lab
 
-### Objective
-
-Prepare your Azure DevOps learning environment.
+Prepare a simple learning setup.
 
 !!! success "Done when"
 
-    You can open VS Code, run Git commands, check Azure CLI, verify Docker, and save your notes in a local folder.
+    You can open VS Code, run a few commands, and keep notes in a local folder.
 
-### Step 1: Install tools
+### 1. Install the tools
 
-| Tool               | Why you need it                      |
-| ------------------ | ------------------------------------ |
-| Git                | Version control and GitHub practice. |
-| Visual Studio Code | Editor and integrated terminal.      |
-| Azure CLI          | Azure command-line management.       |
-| PowerShell 7+      | Cross-platform automation.           |
-| Docker Desktop     | Container practice.                  |
-| Terraform          | Infrastructure as Code practice.     |
-| kubectl            | Kubernetes command-line practice.    |
+| Tool      | Why it helps                                  |
+| --------- | --------------------------------------------- |
+| Git       | Saves code history.                           |
+| VS Code   | Lets you edit files and use a terminal.       |
+| Azure CLI | Lets you work with Azure using commands.      |
+| Docker    | Helps you learn containers later.             |
+| Terraform | Helps you learn infrastructure as code later. |
+| kubectl   | Helps you learn Kubernetes later.             |
 
-Useful VS Code extensions:
-
-- Azure Account
-- Azure Resources
-- Azure CLI Tools
-- Docker
-- Kubernetes
-- Terraform
-- YAML
-- GitHub Pull Requests
-
-### Step 2: Create accounts
-
-Create or verify access to:
+### 2. Create accounts
 
 - Microsoft Azure
 - Azure DevOps
 - GitHub
 
-Enable MFA on Microsoft and GitHub accounts.
-
-### Step 3: Create your learning folder
+### 3. Create a learning folder
 
 ```text
 AzureDevOps365/
@@ -273,25 +235,7 @@ AzureDevOps365/
 
 ## Command Checklist
 
-Run these commands to verify your setup.
-
-=== "Azure CLI"
-
-    ```bash title="Azure CLI"
-    az version
-    az login
-    az account list --output table
-    az account show --output table
-    ```
-
-=== "PowerShell"
-
-    ```powershell title="PowerShell"
-    $PSVersionTable
-    Install-Module Az -Scope CurrentUser
-    Connect-AzAccount
-    Get-AzSubscription
-    ```
+Run these commands only to check that tools are installed.
 
 === "Git"
 
@@ -299,14 +243,20 @@ Run these commands to verify your setup.
     git --version
     git config --global user.name "Your Name"
     git config --global user.email "you@example.com"
-    git config --list
+    ```
+
+=== "Azure CLI"
+
+    ```bash title="Azure CLI"
+    az version
+    az login
+    az account show --output table
     ```
 
 === "Docker"
 
     ```bash title="Docker"
     docker --version
-    docker images
     docker ps
     ```
 
@@ -324,7 +274,7 @@ Run these commands to verify your setup.
 
 ## First Examples
 
-You do not need to execute these today. Just recognize the syntax.
+You do not need to master these today. Just notice how they look.
 
 === "Azure Pipeline"
 
@@ -349,129 +299,11 @@ You do not need to execute these today. Just recognize the syntax.
 
 ## Azure Portal Walkthrough
 
-Open the Azure portal and explore:
+Open the Azure portal and look around. Do not create paid resources yet.
 
 1. Azure Home
 2. Resource Groups
-3. Virtual Machines
-4. Storage Accounts
-5. Azure Monitor
-6. Microsoft Entra ID
-7. Cost Management
-
-Do not create paid resources yet. Today is only for navigation and familiarity.
-
-## Safety Notes
-
-### Security
-
-- Enable MFA.
-- Never commit passwords, tokens, or connection strings.
-- Use Azure Key Vault for real secrets.
-- Use least privilege access.
-- Keep tools updated.
-
-### Cost
-
-- Use Azure Free Tier where possible.
-- Set budgets and spending alerts before creating resources.
-- Delete lab resources when finished.
-- Stop or deallocate virtual machines when idle.
-- Use one resource group per lab for easy cleanup.
-
-### Common mistakes
-
-- Jumping into Kubernetes before understanding containers and networking.
-- Memorizing commands without understanding them.
-- Skipping Git basics.
-- Not writing notes.
-- Leaving cloud resources running.
-- Using admin accounts for daily practice.
-
-## Troubleshooting
-
-**Problem:** `az login` fails.
-
-Possible causes:
-
-- Azure CLI is not installed correctly.
-- Browser login cannot complete.
-- Network, firewall, or proxy restrictions block authentication.
-- The wrong account, tenant, or subscription is active.
-- Azure CLI is outdated.
-
-Try this flow:
-
-```bash title="Azure CLI login checks"
-az version
-az login --use-device-code
-az account list --output table
-az account show --output table
-```
-
-If the wrong subscription is active:
-
-```bash title="Set subscription"
-az account set --subscription "<subscription-name-or-id>"
-```
-
-## Mini Assignment
-
-Complete these tasks:
-
-1. Install Git, VS Code, Azure CLI, PowerShell 7+, Docker, Terraform, and kubectl.
-2. Sign in to Azure.
-3. Create the `AzureDevOps365` folder structure.
-4. Configure Git with your name and email.
-5. Create `Notes/day-01-foundations.md`.
-6. In your note, explain DevOps in your own words.
-7. Capture the output of the setup commands from the command checklist.
-
-## Quiz
-
-1. What problem does DevOps solve?
-2. What are the stages of the DevOps lifecycle?
-3. What is Continuous Integration?
-4. What is Continuous Delivery?
-5. What is Azure DevOps?
-6. What does Azure CLI do?
-7. Why is Git important in DevOps?
-8. What is Infrastructure as Code?
-9. Why should secrets never be stored in source code?
-10. What is Azure Monitor used for?
-
-??? success "Answer guide"
-
-    1. DevOps reduces slow handoffs, manual work, risky releases, and poor feedback.
-    2. Plan, Code, Build, Test, Release, Deploy, Operate, Monitor.
-    3. CI automatically builds and tests code when changes are integrated.
-    4. Continuous Delivery keeps software ready to release after checks pass.
-    5. Azure DevOps is Microsoft's platform for planning, repos, pipelines, tests, and artifacts.
-    6. Azure CLI manages Azure resources from a terminal or automation script.
-    7. Git provides history, collaboration, branching, review, and rollback.
-    8. Infrastructure as Code stores infrastructure definitions in version-controlled files.
-    9. Secrets in source code can leak credentials and compromise systems.
-    10. Azure Monitor collects metrics, logs, alerts, and operational signals.
-
-## Expected Outcome
-
-After Day 1, you should be able to:
-
-- Explain DevOps at a beginner level.
-- Describe the software delivery lifecycle.
-- Identify Azure DevOps services.
-- Understand basic Azure cloud services.
-- Verify your local tools.
-- Start keeping organized notes for future labs.
-
-## Revision Notes
-
-- DevOps is culture plus automation.
-- Azure DevOps supports planning, source control, CI/CD, testing, and packages.
-- Cloud platforms are API-driven and automation-friendly.
-- Security and cost awareness start on Day 1.
-- Learn the why before the how.
-
-## Week 1 Goal
-
-Build a strong foundation in DevOps, cloud computing, Git, operating systems, networking basics, and tool setup. This foundation supports upcoming lessons on Azure, CI/CD, Docker, Kubernetes, Infrastructure as Code, monitoring, and secure delivery.
+3. Storage Accounts
+4. Azure Monitor
+5. Microsoft Entra ID
+6. Cost Management
